@@ -36,11 +36,11 @@ export default {
 
 <style scoped>
 .container {
-  width: 200px;
-  height: 320px;
-  border: 1px solid white;
-  padding: 10px;
-  background-color: #ccc;
+  width: 180px;
+  height: 280px;
+  padding: 20px;
+  background-color: #FAFAFA;
+  color: #424242;
 }
 .archer {
   width: 30px;
