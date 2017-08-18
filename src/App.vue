@@ -2,8 +2,12 @@
   <div id="app">
     <boo></boo>
     <div class="tabletop">
-      <archer class="character"></archer>
-      <swamp class="land" @click="log()" ></swamp>
+      <!-- <archer class="character" :class="styleObject"></archer> -->
+      <mage class="character"></mage>
+      <priest class="character"></priest>
+      <thief class="character"></thief>
+      <warrior class="character"></warrior>
+      <swamp class="land" @click="log()"></swamp>
       <div class="monster"><h2>Monzter</h2></div>
     </div>
 
@@ -28,6 +32,11 @@ import Swamp from './components/lands/Swamp'
 
 export default {
   name: 'app',
+  data () {
+    styleObject: {
+      display: 'none'
+    }
+  },
   components: {
     Boo,
     Archer,
