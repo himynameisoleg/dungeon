@@ -3,7 +3,7 @@
     <boo></boo>
     <div class="tabletop">
       <archer class="character"></archer>
-      <swamp class="land"></swamp>
+      <swamp class="land" @click="log()" ></swamp>
       <div class="monster"><h2>Monzter</h2></div>
     </div>
 
@@ -12,15 +12,39 @@
 
 <script>
 import Boo from './components/Boo'
+//import characters
 import Archer from './components/characters/Archer'
+import Mage from './components/characters/Mage'
+import Priest from './components/characters/Priest'
+import Thief from './components/characters/Thief'
+import Warrior from './components/characters/Warrior'
+//import lands
+import Forest from './components/lands/Forest'
+import Island from './components/lands/Island'
+import Mountain from './components/lands/Mountain'
+import Plaines from './components/lands/Plaines'
 import Swamp from './components/lands/Swamp'
+
 
 export default {
   name: 'app',
   components: {
     Boo,
     Archer,
+    Mage,
+    Priest,
+    Thief,
+    Warrior,
+    Forest,
+    Island,
+    Mountain,
+    Plaines,
     Swamp
+  },
+  methods: {
+    log: function () {
+      console.log('ok');
+    }
   }
 }
 </script>

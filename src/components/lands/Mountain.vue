@@ -1,10 +1,10 @@
 <template>
-  <div class="swamp"></div>
+  <div class="mountain"></div>
 </template>
 
 <script>
 export default {
-  name: 'swamp',
+  name: 'mountain',
   data () {
     return {}
 
@@ -22,7 +22,7 @@ export default {
 .swamp {
   height: 320px;
   width: 420px;
-  background-image: url('../../assets/swamp.png');
-  background-color: grey;
+  /*background-image: url('../../assets/mountain.png');*/
+  background-color: red;
 }
 </style>
