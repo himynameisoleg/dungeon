@@ -1,14 +1,24 @@
 <template>
-  <div id="app">
-    <boo></boo>
-    <div class="tabletop">
-      <!-- <archer class="character" :class="styleObject"></archer> -->
-      <mage class="character"></mage>
-      <priest class="character"></priest>
-      <thief class="character"></thief>
-      <warrior class="character"></warrior>
-      <swamp class="land" @click="log()"></swamp>
-      <div class="monster"><h2>Monzter</h2></div>
+  <div>
+    <div id="app">
+      <boo></boo>
+      <div class="tabletop">
+
+        <!-- characters -->
+        <!-- <archer class="character"></archer>
+        <mage class="character""></mage>
+        <priest class="character"></priest>
+        <thief class="character"></thief>
+        <warrior class="character"></warrior> -->
+        <prototype class="character"></prototype>
+
+        <!-- lands -->
+        <swamp class="land"></swamp>
+        <div class="monster"><h2>Monzter</h2></div>
+
+        <div class="box" @click="random()"></div>
+      </div>
+
     </div>
 
   </div>
@@ -17,6 +27,8 @@
 <script>
 import Boo from './components/Boo'
 //import characters
+import Prototype from './components/characters/Prototype'
+
 import Archer from './components/characters/Archer'
 import Mage from './components/characters/Mage'
 import Priest from './components/characters/Priest'
@@ -33,12 +45,13 @@ import Swamp from './components/lands/Swamp'
 export default {
   name: 'app',
   data () {
-    styleObject: {
-      display: 'none'
+    return {
+      isChosen: 0,
     }
   },
   components: {
     Boo,
+    Prototype,
     Archer,
     Mage,
     Priest,
@@ -52,7 +65,11 @@ export default {
   },
   methods: {
     log: function () {
-      console.log('ok');
+      console.log(this.isChosen);
+    },
+    random: function () {
+      this.isChosen = Math.floor(Math.random()*5);
+      this.log();
     }
   }
 }
@@ -74,6 +91,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 20px;
+}
+.hidden {
+  display: none;
 }
 .tabletop {
   position: absolute;
@@ -99,5 +119,11 @@ export default {
   height: 280px;
   padding: 20px;
   background-color: #ccc;
+}
+.box {
+  height: 20px;
+  width: 20px;
+  background-color: black;
+  position: absolute;
 }
 </style>
